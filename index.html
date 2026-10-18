@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Extravaganza</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="title-banner">
+            <span class="era-label era-80s">80s</span>
+            <h1><u>Movie Extravaganza</u></h1>
+            <span class="era-label era-90s">90s</span>
+            <span class="video-store">RETRO</span>
+        </div>
+        <p>All your movies!</p>
+
+        <div id="connection-status">Checking connection...</div>
+        <div id="sync-status">Changes Pending Sync</div>
+
+        <h2>Add a Movie</h2>
+
+        <form id="movie-form">
+            <label for="title">Movie Title</label>
+            <input type="text" id="title" required>
+
+            <label for="year">Release Year</label>
+            <input type="number" id="year">
+
+            <label for="genres">Genres (please separate with commas)</label>
+            <input type="text" id="genres" placeholder="e.g. Comedy, Adventure">
+
+            <label for="actors">Actors (please separate with commas)</label>
+            <input type="text" id="actors" placeholder="e.g. Tom Hanks, Tim Allen">
+
+            <button type="submit">Add Movie</button>
+        </form>
+
+        <h2>My Movies</h2>
+
+        <!-- The letter buttons are added by app.js. -->
+        <div id="movie-filters" aria-label="Filter movies by title"></div>
+
+        <!-- These labels show how many movies match and which page is open. -->
+        <p id="movie-count" aria-live="polite">Loading movies...</p>
+        <div id="movie-list">Your movies here...</div>
+
+        <!-- The buttons are disabled when there is no previous or next page. -->
+        <div id="pagination">
+            <button type="button" id="previous-page" disabled>
+                &lt;- Previous
+            </button>
+
+            <span id="page-indicator" aria-live="polite">Page 1 of 1</span>
+
+            <button type="button" id="next-page" disabled>
+                Next -&gt;
+            </button>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/pouchdb@9.0.0/dist/pouchdb.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
