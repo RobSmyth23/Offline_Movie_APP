@@ -1,0 +1,388 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 30px 16px;
+    font-family: "Courier New", monospace;
+    background-color: #10051f;
+    background-image: linear-gradient(180deg, #10051f 0%, #241044 60%, #10051f 100%);
+    color: #fff4ff;
+}
+
+.container {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px;
+    background: #1b0d30;
+    border: 2px solid #ff00e6;
+    border-radius: 8px;
+    box-shadow: 8px 8px 0 #000000, 0 0 18px #9d00ff;
+}
+
+/* Main title */
+h1 {
+    margin-top: 0;
+    color: #ff4df0;
+    text-align: center;
+    font-size: 34px;
+    text-shadow: 3px 3px 0 #000000, 0 0 8px #ff00e6, 0 0 18px #8c00ff;
+    letter-spacing: 2px;
+}
+
+p {
+    text-align: center;
+    color: #d8c6ff;
+}
+
+/* The tilted labels give the header its old video-store look. */
+.title-banner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 12px 0 35px;
+    padding: 12px 0 28px;
+}
+
+    .title-banner h1 {
+        flex: 1;
+        margin: 0;
+        font-size: clamp(22px, 4vw, 34px);
+        line-height: 1.25;
+        text-align: center;
+    }
+
+.era-label {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 7px 9px;
+    border: 2px solid #000000;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 4px 4px 0 #000000;
+    white-space: nowrap;
+}
+
+.era-80s {
+    color: #ff61e8;
+    background: #35104b;
+    border-color: #ff00e6;
+    transform: rotate(-12deg);
+    text-shadow: 2px 2px 0 #000000;
+}
+
+.era-90s {
+    color: #43f7ff;
+    background: #102846;
+    border-color: #00eaff;
+    transform: rotate(12deg);
+    text-shadow: 2px 2px 0 #000000;
+}
+
+.video-store {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 5px 10px;
+    background: #ffe45c;
+    color: #17051f;
+    border: 2px solid #000000;
+    box-shadow: 4px 4px 0 #000000;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transform: rotate(-6deg);
+}
+
+/* Section headings */
+h2 {
+    margin-top: 30px;
+    color: #ff54ed;
+    border-bottom: 2px solid #000000;
+    padding-bottom: 8px;
+    text-shadow: 2px 2px 0 #000000;
+}
+
+    /* Give the My Movies heading its own green divider. */
+    h2:last-of-type {
+        position: relative;
+        color: #72ff9b;
+        border-bottom: 3px solid #00ff73;
+        padding-bottom: 10px;
+        text-shadow: 2px 2px 0 #000000, 0 0 8px #00ff73;
+        box-shadow: 0 3px 0 #000000;
+    }
+
+        h2:last-of-type::after {
+            content: "  *";
+            display: inline-block;
+            margin-left: 8px;
+            color: #00ff73;
+            font-size: 25px;
+            text-shadow: 2px 2px 0 #000000, 0 0 8px #00ff73;
+            transform: rotate(15deg);
+        }
+
+    h2:first-of-type {
+        color: #ff54ed;
+        text-shadow: 2px 2px 0 #000000, 0 0 8px #ff00e6;
+    }
+
+/* Connection and sync status */
+#connection-status,
+#sync-status {
+    margin: 12px 0;
+    padding: 12px;
+    background: #24113d;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0 #000000, 0 0 8px #8c00ff;
+    color: #e9d8ff;
+    font-size: 14px;
+}
+
+/* Form labels */
+label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    color: #ffe45c;
+    font-weight: bold;
+}
+
+/* Input boxes */
+input {
+    display: block;
+    width: 100%;
+    padding: 11px;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    background: #10051f;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    box-shadow: 3px 3px 0 #000000;
+}
+
+    input:focus {
+        outline: 2px solid #ff00e6;
+        outline-offset: 2px;
+    }
+
+/* Frame around the Add a Movie form. */
+#movie-form {
+    position: relative;
+    margin-top: 18px;
+    padding: 22px 18px;
+    border: 3px solid #ff00e6;
+    border-radius: 6px;
+    box-shadow: 6px 6px 0 #000000, 0 0 12px #ff00e6;
+}
+
+/* Shared arcade button style */
+button {
+    margin-top: 18px;
+    padding: 11px 17px;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    background: #7900c9;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #000000, 0 0 8px #ff00e6;
+    transition: background 0.15s ease;
+}
+
+    button:hover {
+        background: #c000e8;
+    }
+
+    button:active {
+        transform: translate(2px, 2px);
+        box-shadow: 2px 2px 0 #000000;
+    }
+
+    button:disabled {
+        background: #51465b;
+        cursor: not-allowed;
+    }
+
+/* Green background for the movie list */
+#movie-list {
+    margin-top: 12px;
+    padding: 16px;
+    min-height: 90px;
+    background: #09291c;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0 #000000, 0 0 10px #00ff73;
+}
+
+/* Each movie gets its own card. */
+.movie-card {
+    margin-top: 14px;
+    padding: 16px;
+    background: #103a27;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    box-shadow: 4px 4px 0 #000000, 0 0 8px #00ff73;
+}
+
+    .movie-card h3 {
+        margin-top: 0;
+        color: #8dffb6;
+        text-shadow: 2px 2px 0 #000000;
+    }
+
+    .movie-card p {
+        text-align: left;
+        color: #e2f0e5;
+        overflow-wrap: anywhere;
+    }
+
+    .movie-card button {
+        margin-right: 8px;
+    }
+
+/* Make Delete stand out from the other buttons. */
+.delete-button {
+    background: #8c174d;
+    box-shadow: 4px 4px 0 #000000;
+}
+
+    .delete-button:hover {
+        background: #d21c70;
+    }
+
+/* Black divider between movie entries */
+.movie-card + .movie-card {
+    border-top: 3px solid #000000;
+}
+
+/* The alphabet buttons wrap onto new lines when needed. */
+#movie-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 7px;
+    margin: 18px 0 10px;
+    padding: 14px;
+    background: #24113d;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    box-shadow: 4px 4px 0 #000000;
+}
+
+    #movie-filters .filter-button {
+        min-width: 36px;
+        margin: 0;
+        padding: 8px 10px;
+        background: #35104b;
+        color: #43f7ff;
+        border: 2px solid #00eaff;
+        box-shadow: 2px 2px 0 #000000;
+        font-size: 13px;
+    }
+
+        #movie-filters .filter-button:hover {
+            background: #102846;
+            color: #ffffff;
+        }
+
+        /* Highlight the filter currently being used. */
+        #movie-filters .filter-button.active-filter {
+            background: #00ff73;
+            color: #10051f;
+            border-color: #000000;
+            box-shadow: 2px 2px 0 #000000, 0 0 8px #00ff73;
+        }
+
+/* Show how many movies match the current filter. */
+#movie-count {
+    margin: 12px 0;
+    color: #72ff9b;
+    font-size: 13px;
+}
+
+/* Keep the page arrows and page number together below the list. */
+#pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+    #pagination button {
+        margin: 0;
+        padding: 10px 12px;
+    }
+
+#page-indicator {
+    color: #ffe45c;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#pagination button:disabled {
+    opacity: 0.45;
+    box-shadow: 2px 2px 0 #000000;
+}
+
+/* Adjust spacing and button sizes for phones. */
+@media (max-width: 500px) {
+    body {
+        padding: 15px 10px;
+    }
+
+    .container {
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .title-banner {
+        gap: 6px;
+    }
+
+    .era-label {
+        padding: 5px;
+        font-size: 13px;
+    }
+
+    .video-store {
+        font-size: 10px;
+    }
+
+    #movie-form {
+        padding: 16px 12px;
+    }
+
+    #movie-filters {
+        gap: 5px;
+        padding: 10px;
+    }
+
+        #movie-filters .filter-button {
+            min-width: 32px;
+            padding: 7px;
+            font-size: 12px;
+        }
+
+    #pagination {
+        gap: 8px;
+    }
+
+        #pagination button {
+            padding: 9px;
+            font-size: 12px;
+        }
+}
